@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dog Info Frame - Female</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+  body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #fbd3e9, #f99cb3); /* pink gradient */
+    font-family: 'Open Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .frame {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 3px solid #ff69b4; /* hot pink border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  }
+
+  .photo {
+    width: 100%;
+    height: 55%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ff69b4;
+    background-color: #ffe6f0; /* light pink background */
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #b22222;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6em;
+  }
+
+  .owner {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 2px dashed #ffd1dc; /* pink dash */
+    font-size: 13px;
+    color: #555;
+  }
+
+  .label {
+    font-weight: 600;
+    color: #b22222;
+  }
+
+  /* Decorative accent */
+  .decor {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff69b4, #ffd1dc);
+    clip-path: circle(50% at 50% 50%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+
+  /* Enlarged Paw floating styles */
+  .paw {
+    position: absolute;
+    width: 60px; /* increased size */
+    height: 60px; /* increased size */
+    background-image: url('https://images.rawpixel.com/dark_image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA0L3JtMTg5My1lbGVtZW50LTAyOS5wbmc.png'); /* paw print icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    animation: floatPaw 20s linear infinite;
+  }
+
+  /* Different starting positions and animation delays for variety */
+  .paw:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+  .paw:nth-child(2) { top: 80%; left: 90%; animation-delay: 5s; }
+  .paw:nth-child(3) { top: 50%; left: 10%; animation-delay: 10s; }
+  .paw:nth-child(4) { top: 20%; left: 80%; animation-delay: 2s; }
+  .paw:nth-child(5) { top: 70%; left: 30%; animation-delay: 7s; }
+
+  @keyframes floatPaw {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(50px, -50px) scale(1.2); opacity: 0.6; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Paw prints floating around -->
+<div class="paw"></div>
+<div class="paw"></div>
+<div class="paw"></div>
+<div class="paw"></div>
+<div class="paw"></div>
+
+<div class="decor"></div>
+
+<div class="frame">
+
+  <!-- Insert your dog picture here -->
+  <div class="photo" style="background-image: url('dog.jpeg');"></div>
+
+  <div>
+    <div class="section-title">Dog Information</div>
+    <div class="details">
+      <span class="label">Name:</span> Snowy<br>
+      <span class="label">Sex:</span> Female
+    </div>
+
+    <div class="owner">
+      <span class="label">Owner:</span> Mark Villanueva<br>
+      <span class="label">Location:</span> Cebu City, Philippines
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
